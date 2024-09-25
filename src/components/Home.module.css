@@ -1,0 +1,86 @@
+.container {
+    background-color: rgb(195, 202, 208);
+    padding: 20px;
+}
+.heading{
+    font-size: 40px;
+    font-weight: 500;
+}
+.row {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap; 
+    overflow-x: auto; 
+}
+
+
+
+.cards {
+    flex: 0 0 auto; 
+    width: 25%;
+    height: 300px;
+    margin: 10px;
+    padding: 5px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+
+/* .cards {
+    width: 100%;
+} */
+
+/* Media query for medium screens (tablets, etc.) */
+@media (max-width: 1024px) {
+    .cards {
+        width: 33.33%; /* For medium screens, 3 cards per row */
+    }
+}
+
+/* Media query for small screens (phones) */
+@media (max-width: 768px) {
+    .cards {
+        width: 50%; /* For small screens, 2 cards per row */
+    }
+    .heading{
+        font-size: 30px;
+    }
+}
+
+/* Media query for very small screens */
+@media (max-width: 480px) {
+    .cards {
+        width: 90%; /* For very small screens, 1 card per row */
+    }
+    .heading{
+        font-size: 20px;
+    }
+}
+
+/* Image container */
+.image {
+    height: 70%;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+}
+
+/* Image styling */
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Adjust image to fit within its container */
+}
+
+/* Details container */
+.details {
+    height: 30%;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+    font-weight: 500;
+}
