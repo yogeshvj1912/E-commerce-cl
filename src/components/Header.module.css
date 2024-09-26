@@ -48,7 +48,89 @@
 }
 
 
-.menu_bar{
+.menu_bar_div{
     width:10%;
+    padding: 5px;
 
 }
+
+
+.menu_bar {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 15px 11px;
+    box-sizing: border-box;
+    align-content: space-between;
+    justify-content: space-around;
+    gap: 3px;
+    width: 50px;
+    height: 100%;
+    background-color: rgb(26, 25, 25);
+}
+
+.bar {
+    border: 2px rgb(255, 255, 255) solid;
+   
+}
+.open_menu {
+    position:fixed;
+  
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #f0f0f0;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  /* Close button */
+  .close {
+    align-self: flex-end;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Menu items */
+  .open_menu div {
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .open_menu div:hover {
+    color: #007BFF;
+  }
+  
+  /* Sub-menu for Electronics */
+  .menu_inside_list {
+ 
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px 10px 30px;
+    background-color: #e0e0e0;
+  
+  }
+  
+  .menu_inside_list div {
+    font-size: 17px;
+    font-weight: 400;
+    margin-bottom: 5px;
+    cursor: pointer;
+    color: #444;
+  }
+  
+  .menu_inside_list div:hover {
+    color: #0056b3;
+  }
