@@ -15,9 +15,9 @@ export function AddProvider({ children }) {
     let getProductData = async () => {
         try {
             const [electronicsData, clothsData, homeAppliancesData] = await Promise.all([
-                axios.get("http://localhost:8000/api/electronics"),
-                axios.get("http://localhost:8000/api/cloths"),
-                axios.get("http://localhost:8000/api/home-appliances")
+                axios.get("https://e-commerce-sv.onrender.com/api/electronics"),
+                axios.get("https://e-commerce-sv.onrender.com/api/cloths"),
+                axios.get("https://e-commerce-sv.onrender.com/api/home-appliances")
             ]);
             setElectronics(electronicsData.data);
             setCloths(clothsData.data);
