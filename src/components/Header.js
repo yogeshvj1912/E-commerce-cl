@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import styles from './Header.module.css'
 import AddContext from './AddContext'
 import { useNavigate } from 'react-router-dom'
@@ -7,7 +7,26 @@ function Header() {
   const contextData = useContext(AddContext)
   const [bars, setBars] = useState(false)
   const [activeCategory, setActiveCategory] = useState('') // State to track the active category
+  const [searchBar,setSearchBar] = useState(false)
   const navigate = useNavigate()
+
+
+  useEffect(() => {
+    
+    const checkScreenSize = () => {
+      if (window.matchMedia("(max-width: 500px)").matches) {
+        setSearchBar(false); 
+      }
+    };
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+   return () => {
+      window.removeEventListener('resize', checkScreenSize);
+    };
+  }, []);
+
+
+
 
   const toggleCategory = (category) => {
     // If the clicked category is the active one, close it, otherwise open the new category
@@ -16,19 +35,23 @@ function Header() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>ShopWavs</h1>
-      <div className={styles.search_bar}>
+      <h1  className={styles.title} id={searchBar ?styles.title_off :styles.title_on}>ShopWavs &#128722;</h1>
+      
+      <div className={styles.search_bar} id={searchBar?styles.search_bar_on:styles.search_bar_off}>
+     
+      <div className={styles.search_button} id={searchBar?styles.search_button_on:styles.search_button_off}> <img src="/search_icon.jpg" alt="" className={styles.search_img} onClick={()=>setSearchBar(true)}/></div>
         <input
           type="text"
           placeholder='Search Products'
           value={contextData.searchQuery}
           onChange={(e) => { contextData.setSearchQuery(e.target.value) }}
+          className={styles.input} id={searchBar?styles.input_on:styles.input_off}
         />
-        <button className={styles.search_button}>Search</button>
+        <span className={styles.back_arrow}id={searchBar?styles.back_arrow_on:""} onClick={()=>setSearchBar(false)}>&#x2715;</span>
       </div>
       <div className={styles.menu_bar_div}>
         <div className={styles.menu}>
-          <div onClick={() => { setBars(true) }} className={styles.menu_bar}>
+          <div onClick={() => { setBars(true);setSearchBar(false) }} className={styles.menu_bar}>
             <span className={styles.bar}></span>
             <span className={styles.bar}></span>
             <span className={styles.bar}></span>

@@ -1,10 +1,11 @@
 .container {
     background-color: rgb(195, 202, 208);
-    padding: 20px;
+    
 }
 .heading{
     font-size: 40px;
     font-weight: 500;
+ padding: 10px;
 }
 .row {
     width: 100%;
@@ -50,7 +51,8 @@
 /* Media query for small screens (phones) */
 @media (max-width: 768px) {
     .cards {
-        width: 50%; /* For small screens, 2 cards per row */
+        width: 50%; 
+      
     }
     .heading{
         font-size: 30px;
@@ -58,9 +60,12 @@
 }
 
 /* Media query for very small screens */
-@media (max-width: 480px) {
+@media (max-width: 425px) {
     .cards {
-        width: 90%; /* For very small screens, 1 card per row */
+        width: 49%; 
+        margin: 2px;
+        height: 200px;
+     
     }
     .heading{
         font-size: 20px;
@@ -69,7 +74,7 @@
 
 /* Image container */
 .image {
-    height: 70%;
+    height: 50%;
     background-color: rgb(255, 255, 255);
     overflow: hidden;
 }
@@ -84,7 +89,7 @@
 /* Details container */
 .details {
     height: 30%;
-    font-size: 16px;
+    font-size: 14px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;

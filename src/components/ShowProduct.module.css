@@ -1,0 +1,198 @@
+.container {
+  width: 100%;
+  height: 92%;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+}
+
+.image {
+  width: 40%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  padding: 20px 0;
+
+}
+
+.image img {
+  width: 100%;
+  height: 98%;
+  object-fit: scale-down;
+  /* Adjust image to fit within its container */
+}
+
+.details {
+  width: 60%;
+  height: 100%;
+  padding: 10px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.details div {
+  font-size: 20px;
+
+}
+
+.about_product {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  background-color: aquamarine;
+
+}
+
+table {
+  font-size: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  /* Remove default table borders */
+}
+
+td {
+  padding: 8px;
+  vertical-align: top;
+  /* Align content to the top */
+}
+
+td:first-child {
+  width: 180px;
+  /* Set first column width */
+  position: relative;
+
+}
+
+td:first-child::after {
+  content: ': ';
+  /* Add colon and line after label */
+  position: absolute;
+  right: 0;
+  /* Adjust position of the colon and line */
+}
+
+
+
+/* Remove all borders */
+table,
+tr,
+td {
+  border: none;
+}
+
+.add_button {
+  width: 120px;
+  margin-left: 50px;
+  padding: 10px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+.add_button:hover {
+  background-color: #0056b3;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .image {
+    width: 30%;
+  }
+
+  .details {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    display: inline-block;
+  }
+
+  .image {
+    width: 100%;
+    height: 50%;
+    background-color: #e6e6e6;
+    padding: 0;
+  }
+
+  .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Adjust image to fit within its container */
+  }
+
+  .details {
+    width: 100%;
+    height: 50%;
+    padding: 30px 0 0 50px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .details {
+    padding: 20px;
+    font-size: 12px;
+  }
+
+  table {
+    font-size: 15px;
+  }
+
+  td {
+    padding: 4px;
+
+  }
+
+  td:first-child {
+    width: 135px;
+    /* Set first column width */
+    position: relative;
+
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+  .details {
+    padding: 10px;
+    font-size: 10px;
+  }
+
+  .image {
+    background-color: #ffffff;
+  }
+
+  table {
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  td:first-child {
+    width: 110px;
+  }
+
+  .buttons {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+
+  }
+
+  .add_button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+
+}

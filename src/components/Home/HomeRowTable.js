@@ -12,7 +12,7 @@ function HomeRowTable({productDatas,productHeading}) {
         if (ele.rating >= 1) {
           return <div onClick={()=>{navigate(`/show-product/${ele._id}`)}} key={i} className={styles.cards}>
             <div className={styles.image}>
-              <img src={`https://e-commerce-sv.onrender.com/${ele.image}`} alt="" />
+              <img src={`http://localhost:8000/${ele.image}`} alt="" />
             </div>
            <div className={styles.details}>
            <div >{ele.title}</div>

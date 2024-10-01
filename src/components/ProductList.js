@@ -20,7 +20,7 @@ function ProductList() {
             {
                 filteredProducts.map((ele)=>{
                     return <div onClick={()=>{navigate(`/show-product/${ele._id}`)}} key = {ele._id} className={styles.row}>
-                 <div className={styles.image}><img src={`https://e-commerce-sv.onrender.com/${ele.image}`} alt="" /></div>
+                 <div className={styles.image}><img src={`http://localhost:8000/${ele.image}`} alt="" /></div>
                  <div className={styles.details}>
                     <h2>{ele.title}</h2>
                     <div>₹{ele.price}</div>
