@@ -180,6 +180,7 @@
   #back_arrow_on {
     display: inline;
     width: 30px;
+    padding: 2px 2px 0 0;
     background-color: #ffffff;
     font-size: 22px;
     font-weight: 900;
@@ -224,7 +225,7 @@
     padding: 10px 10px;
     gap: 3px;
     width: 43px;
-    margin-top:3px;
+    margin-top:6px;
     background-color: rgb(26, 25, 25);
   }
 }
