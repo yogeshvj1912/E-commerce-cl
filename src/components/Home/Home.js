@@ -7,14 +7,18 @@ import AddContext from '../AddContext';
 function Home() {
 
   const contextData = useContext(AddContext)
+
  
 
 
   return (
     <div className={styles.container}>
-      <HomeRowTable productDatas={contextData.electronics} productHeading={"Electronic"} />
+
+{contextData.isLoading?<h1>Loading...</h1>:   <><HomeRowTable productDatas={contextData.electronics} productHeading={"Electronic"} />
       <HomeRowTable productDatas={contextData.homeAppliances} productHeading={"Home Appliance"} />
-      <HomeRowTable productDatas={contextData.cloths} productHeading={"Cloth"} />
+      <HomeRowTable productDatas={contextData.cloths} productHeading={"Cloth"} /></>}
+
+   
     </div>
   )
 }

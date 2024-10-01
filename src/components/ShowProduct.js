@@ -17,7 +17,7 @@ console.log(contextData.totalData)
         if(ele._id === id){
          
      return <>
-    <div className={styles.image}><img src={`http://localhost:8000/${ele.image}`} alt="" /></div>
+    <div className={styles.image}><img src={`https://e-commerce-sv.onrender.com/${ele.image}`} alt="" /></div>
     <div className={styles.details}>
      <h1>{ele.title}</h1>
      <h2>₹{ele.price}</h2>

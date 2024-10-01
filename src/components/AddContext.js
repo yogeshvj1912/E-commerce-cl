@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 let AddContext = createContext();
 
@@ -8,22 +9,27 @@ export function AddProvider({ children }) {
     const [homeAppliances, setHomeAppliances] = useState([]);
     const [cloths, setCloths] = useState([]);
     const [productList, setProductList] = useState([]);
+    const [isLoading, setLoading] = useState(true)
     const [totalData, setTotalData] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
+
+    const navigate = useNavigate()
 
     // Fetch product data from the API
     let getProductData = async () => {
         try {
             const [electronicsData, clothsData, homeAppliancesData] = await Promise.all([
-                axios.get("http://localhost:8000/api/electronics"),
-                axios.get("http://localhost:8000/api/cloths"),
-                axios.get("http://localhost:8000/api/home-appliances")
+                axios.get("https://e-commerce-sv.onrender.com/api/electronics"),
+                axios.get("https://e-commerce-sv.onrender.com/api/cloths"),
+                axios.get("https://e-commerce-sv.onrender.com/api/home-appliances")
             ]);
             setElectronics(electronicsData.data);
             setCloths(clothsData.data);
             setHomeAppliances(homeAppliancesData.data);
+            setLoading(false)
         } catch (error) {
             console.log(error);
+            navigate("/error")
         }
     };
     console.log(totalData)
@@ -41,7 +47,7 @@ export function AddProvider({ children }) {
     // Filter products based on search query
     const filterProduct = (products) => {
         const searchLower = searchQuery.toLowerCase();
-        return products.filter(product => 
+        return products.filter(product =>
             product.title?.toLowerCase().includes(searchLower) ||
             product.brand?.toLowerCase().includes(searchLower) ||
             product.type?.toLowerCase().includes(searchLower) ||
@@ -56,22 +62,23 @@ export function AddProvider({ children }) {
 
     // Category filter function
     // let category = (data) => {
-        
+
     // };
 
     return (
-        <AddContext.Provider value={{ 
+        <AddContext.Provider value={{
             totalData,
             productList, // Provide filtered products
-            setCloths, 
-            cloths, 
-            homeAppliances, 
-            setHomeAppliances, 
-            electronics, 
-            setElectronics, 
-            searchQuery, 
-            setSearchQuery, 
-           
+            setCloths,
+            cloths,
+            homeAppliances,
+            setHomeAppliances,
+            electronics,
+            setElectronics,
+            searchQuery,
+            setSearchQuery,
+            isLoading
+
         }}>
             {children}
         </AddContext.Provider>

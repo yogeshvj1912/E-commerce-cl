@@ -6,22 +6,23 @@ import Home from './components/Home/Home'
 import ShowProduct from './components/ShowProduct';
 import { AddProvider } from './components/AddContext';
 import ProductList from './components/ProductList';
+import ErrorPage from './ErrorPage';
 
 function App() {
   return (
- <BrowserRouter>
- <AddProvider>
- <Routes>
-  <Route path="/" element={<Main/>}>
-  <Route index element={<Home/>}/>
-  <Route path="show-product/:id" element={<ShowProduct/>}/>
-  <Route path="product-list/:id" element={<ProductList/>}/>
-
-  </Route>
-  
- </Routes>
- </AddProvider>
- </BrowserRouter>
+    <BrowserRouter>
+      <AddProvider>
+        <Routes>
+          <Route path="/" element={<Main />}>
+            <Route index element={<Home />} />
+            <Route path="show-product/:id" element={<ShowProduct />} />
+            <Route path="product-list/:id" element={<ProductList />} />
+            <Route path="error" element={<ErrorPage />} />
+          </Route>
+     
+        </Routes>
+      </AddProvider>
+    </BrowserRouter>
   );
 }
 
